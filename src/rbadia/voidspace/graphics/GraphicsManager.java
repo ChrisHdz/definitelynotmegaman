@@ -162,7 +162,4 @@ public class GraphicsManager {
 	public void drawBigAsteroid(Rectangle bigAsteroid, Graphics2D g2d, ImageObserver observer) {
 		g2d.drawImage(bigAsteroidImg, bigAsteroid.x, bigAsteroid.y, observer);
 	}
-	public void drawBackground(Rectangle bigAsteroid, Graphics2D g2d, ImageObserver observer) {
-		g2d.drawImage(bigAsteroidImg, bigAsteroid.x, bigAsteroid.y, observer);
-}
 }

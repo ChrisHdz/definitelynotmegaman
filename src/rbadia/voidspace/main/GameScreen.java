@@ -47,6 +47,7 @@ public class GameScreen extends BaseScreen{
 
 	private Rectangle asteroidExplosion;
 	private Rectangle bigAsteroidExplosion;
+	private Rectangle background;
 	//	private Rectangle shipExplosion;
 	//private Rectangle bossExplosion;
 
@@ -432,7 +433,7 @@ public class GameScreen extends BaseScreen{
 		}
 
 		if (boom == 15){
-			restructure();
+			restructure3();
 		}
 		
 		if(boom == 20)
@@ -675,10 +676,7 @@ public class GameScreen extends BaseScreen{
 	public int getBoom(){
 		return boom;
 	}
-	public void setBoom(int boom){
-		this.boom= boom;
-		
-	}
+
 	public int boomReset(){
 		boom= 0;
 		return boom;
@@ -768,11 +766,24 @@ public class GameScreen extends BaseScreen{
 		Platform[] platform = gameLogic.getNumPlatforms();
 		for(int i=0; i<8; i++){
 			if(i<4)	platform[i].setLocation(50+ i*50, getHeight()/2 + 140 - 40);
-			if(i==4) platform[i].setLocation(50 +i*50, getHeight()/2 + 140 - 3*40);
+			if(i==4) platform[i].setLocation(50 +i*50, getHeight()/2 + 20 + 40);
 			if(i>4){	
-				int n=4;
-				platform[i].setLocation(50 + i*50, getHeight()/2 + 20 + (i-n)*40 );
-				n=n+2;
+				
+				platform[i].setLocation(50 + i*50, getHeight()/2 + 20 + 40 );
+				
+			}
+		}
+		status.setLevel(status.getLevel() + 1);
+	}
+	
+	public void restructure3(){
+		
+		Platform[] platform = gameLogic.getNumPlatforms();
+		for(int i=0; i<8; i++){
+			if(i<4)	platform[i].setLocation(50+ i*50, getHeight()/2 + 140 - 80);
+			if(i==4) platform[i].setLocation(50 +i*50, getHeight()/2 + 140 - 80);
+			if(i>4){	
+				platform[i].setLocation(50 + i*50, getHeight()/2 + 140 - 80 );
 			}
 		}
 		status.setLevel(status.getLevel() + 1);
