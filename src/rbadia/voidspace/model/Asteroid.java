@@ -10,8 +10,8 @@ public class Asteroid extends Rectangle {
 	
 	public static final int DEFAULT_SPEED = 4;
 	
-	private int asteroidWidth = 32;
-	private int asteroidHeight = 32;
+	private int asteroidWidth = 40;
+	private int asteroidHeight = 40;
 	private int speed = DEFAULT_SPEED;
 
 	private Random rand = new Random();

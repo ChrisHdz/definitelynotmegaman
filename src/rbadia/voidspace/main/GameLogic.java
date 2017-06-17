@@ -151,7 +151,7 @@ public class GameLogic {
 			}
 		}
 		if(!status.isGameWon()){
-			if(gameScreen.getBoom() == 2)
+			if(gameScreen.getBoom() == 2 || gameScreen.getBoom() == 9 || gameScreen.getBoom() == 15 )
 				gameWon();
 		}
 	}

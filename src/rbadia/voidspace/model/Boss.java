@@ -12,10 +12,10 @@ public class Boss extends Rectangle {
 	private static final long serialVersionUID = 1L;
 	
 	public static final int DEFAULT_SPEED3 = 4;
-	private static final int Y_OFFSET = 325; // initial y distance of the ship from the bottom of the screen 
+	private static final int Y_OFFSET = 280; // initial y distance of the ship from the bottom of the screen 
 	
-	private int bossWidth = 75;
-	private int bossHeight = 83;
+	private int bossWidth = 200;
+	private int bossHeight = 220;
 	private int bossWidth2 = 110;
 	private int bossHeight2 = 100;
 	private int speed3 = DEFAULT_SPEED3;

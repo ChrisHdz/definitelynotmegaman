@@ -30,7 +30,7 @@ public class VoidSpaceMain {
 		
 		//Music
 		//allows music to be played while playing
-		audioFile = new File("audio/menuScreen.wav");
+		audioFile = new File("audio/BossBattle.wav");
 		try {
 			audioStream = AudioSystem.getAudioInputStream(audioFile);
 		} catch (UnsupportedAudioFileException e) {

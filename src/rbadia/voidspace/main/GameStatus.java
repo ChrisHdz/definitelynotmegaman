@@ -7,7 +7,7 @@ public class GameStatus {
 	// game flags
 	private boolean gameStarted = false;
 	private boolean gameStarting = false;
-	private boolean gameOver = false;
+	public boolean gameOver = false;
 	private boolean gameWon = false;
 	
 	// status variables

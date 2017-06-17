@@ -33,10 +33,11 @@ public class GraphicsManager {
 	private BufferedImage asteroidImg;
 	private BufferedImage asteroidExplosionImg;
 	private BufferedImage megaManExplosionImg;
-	//	private BufferedImage bossImg;
-	//	private BufferedImage bossImg2;
-	//	private BufferedImage bigAsteroidImg;
+	private BufferedImage bossImg;
+	private BufferedImage bossImg2;
+	private BufferedImage bigAsteroidImg;
 	private BufferedImage bigAsteroidExplosionImg;
+	private BufferedImage backgroundImg;
 
 	/**
 	 * Creates a new graphics manager and loads the game images.
@@ -49,16 +50,17 @@ public class GraphicsManager {
 			this.megaFireRImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/megaFireRight.png"));
 			this.floorImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/megaFloor.png"));
 			this.platformImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/platform3.png"));
-			//			this.bossImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/boss1.png"));
-			//			this.bossImg2 = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/boss2.png"));
+			this.bossImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/boss1.png"));
+			this.bossImg2 = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/boss2.png"));
 			this.asteroidImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/asteroid.png"));
 			this.asteroidExplosionImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/asteroidExplosion.png"));
-			//this.megaManExplosionImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/megaManExplosion.png"));
+						//this.megaManExplosionImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/megaManExplosion.png"));
 			this.bulletImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/bullet.png"));
 			this.bigBulletImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/bigBullet.png"));
-			//			this.bigAsteroidImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/BigAsteroid.png"));
-			//			this.bigAsteroidExplosionImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/bigAsteroidExplosion.png"));
-
+			this.bigAsteroidImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/BigAsteroid.png"));
+			this.bigAsteroidExplosionImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/bigAsteroidExplosion.png"));
+			this.backgroundImg = ImageIO.read(getClass().getResource("/rbadia/voidspace/graphics/spaceBack.png"));
+		
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "The graphic files are either corrupt or missing.",
 					"VoidSpace - Fatal Error", JOptionPane.ERROR_MESSAGE);
@@ -151,6 +153,15 @@ public class GraphicsManager {
 		g2d.drawImage(bigAsteroidExplosionImg, bigAsteroidExplosion.x, bigAsteroidExplosion.y, observer);
 	}
 
-
-
+	public void drawBoss(Rectangle boss, Graphics2D g2d, ImageObserver observer) {
+		g2d.drawImage(bossImg, boss.x, boss.y, observer);
+	}
+	public void drawBoss2(Rectangle boss2, Graphics2D g2d, ImageObserver observer) {
+		g2d.drawImage(bossImg2, boss2.x, boss2.y, observer);
+	}
+	public void drawBigAsteroid(Rectangle bigAsteroid, Graphics2D g2d, ImageObserver observer) {
+		g2d.drawImage(bigAsteroidImg, bigAsteroid.x, bigAsteroid.y, observer);
+	}
+	public void drawBackground(Rectangle bigAsteroid, Graphics2D g2d, ImageObserver observer) {
+		g2d.drawImage(bigAsteroidImg, bigAsteroid.x, bigAsteroid.y, observer);
 }

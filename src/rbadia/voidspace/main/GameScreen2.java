@@ -125,4 +125,16 @@ public class GameScreen2 extends BaseScreen {
 		return false;
 	}
 
+	@Override
+	protected void drawYouWin2() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	protected void drawYouWin3() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

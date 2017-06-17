@@ -20,7 +20,7 @@ import rbadia.voidspace.model.MegaMan;
 /**
  * Handles user input events.
  */
-public class InputHandler implements KeyListener{
+public class InputHandler extends GameScreen implements KeyListener{
 	private boolean leftIsPressed;
 	private boolean rightIsPressed;
 	private boolean downIsPressed;
@@ -30,6 +30,7 @@ public class InputHandler implements KeyListener{
 	private boolean eIsPressed;
 	private boolean qIsPressed;
 	private boolean mIsPressed;
+	private boolean nIsPressed;
 
 	private long lastBulletTime;
 	private long lastExchangeTime;
@@ -133,8 +134,19 @@ public class InputHandler implements KeyListener{
 			if(rightIsPressed){
 				moveMegaManRight(megaMan, gameScreen.getWidth());
 			}
+			
+			
+
+			if(nIsPressed){
+				if(status.isGameStarted()){
+					gameLogic.gameWon();
+					gameScreen.restructure();
+				}
+						 
+				}	
+			}
 		}
-	}
+	
 
 
 
@@ -148,7 +160,7 @@ public class InputHandler implements KeyListener{
 			megaMan.translate(0, -megaMan.getSpeed()*2);
 		}
 	}
-
+	
 
 
 	/**
@@ -234,7 +246,7 @@ public class InputHandler implements KeyListener{
 				//Music
 				//changes music from "menu music" to "ingame music"
 				VoidSpaceMain.audioClip.close();
-				VoidSpaceMain.audioFile = new File("audio/mainGame.wav");
+				VoidSpaceMain.audioFile = new File("audio/BossBattle.wav");
 				try {
 					VoidSpaceMain.audioStream = AudioSystem.getAudioInputStream(VoidSpaceMain.audioFile);
 					VoidSpaceMain.audioClip.open(VoidSpaceMain.audioStream);
@@ -308,6 +320,10 @@ public class InputHandler implements KeyListener{
 		case KeyEvent.VK_M:
 			this.mIsPressed= true;
 			break;
+			
+		case KeyEvent.VK_N:
+			this.nIsPressed= true;
+			break;
 		}
 
 
@@ -348,6 +364,9 @@ public class InputHandler implements KeyListener{
 
 		case KeyEvent.VK_M:
 			this.mIsPressed = false;
+			break;
+		case KeyEvent.VK_N:
+			this.nIsPressed = false;
 			break;
 		}
 		e.consume();
